@@ -1,6 +1,6 @@
 ---
 title: 'البوست الأول'
-description: ''
+description: ' '
 pubDate: 'Jul 28 2023'
 heroImage: '/blog-placeholder-3.jpg'
 ---
