@@ -7,6 +7,7 @@ this is my blog website using astro, i took a starter blog template and i edited
 2. Some of the post card styling 
 3. Removing home page
 4. All the website is arabic!
+5. Changing the website to darkmode
 
 ### Visit the website
 
