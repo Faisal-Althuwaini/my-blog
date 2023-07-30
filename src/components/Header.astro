@@ -36,11 +36,18 @@ import { SITE_TITLE } from '../consts';
 	</nav>
 </header>
 <style>
+
+	:root {
+		--darkmode-lighter: #1A1A1C;
+	--darkmode-dark: #141415;
+	--darkmode-white: #CBCFD2;
+	--darkmode-white-sub: #908A8A;
+	}
 	
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
+		background: var(--darkmode-lighter);
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
 	h2 {
@@ -59,7 +66,7 @@ import { SITE_TITLE } from '../consts';
 	}
 	nav a {
 		padding: 1em 0.5em;
-		color: var(--black);
+		color: var(--darkmode-white);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
 	}
@@ -71,6 +78,8 @@ import { SITE_TITLE } from '../consts';
 	.social-links a {
 		display: flex;
 	}
+
+	
 	@media (max-width: 720px) {
 		.social-links {
 			display: none;

@@ -14,6 +14,10 @@
     "@astrojs/rss": "^2.4.3",
     "@astrojs/sitemap": "^2.0.1",
     "@fontsource-variable/readex-pro": "^5.0.5",
-    "astro": "^2.9.5"
-  }
+    "astro": "^2.9.6"
+  },
+  "description": "this is my blog website using astro, i took a starter blog template and i edited it.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
