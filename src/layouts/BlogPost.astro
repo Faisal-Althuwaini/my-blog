@@ -7,10 +7,10 @@ import FormattedDate from "../components/FormattedDate.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, dir = "rtl" } = Astro.props;
 ---
 
-<html dir="rtl">
+<html dir={dir}>
   <head>
     <BaseHead title={title} description={description} />
     <style>
@@ -52,6 +52,225 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       .last-updated-on {
         font-style: italic;
       }
+      
+      /* LTR specific styles */
+      html[dir="ltr"] body {
+        text-align: left !important;
+        direction: ltr !important;
+      }
+      html[dir="ltr"] p {
+        text-align: left !important;
+        direction: ltr !important;
+      }
+      html[dir="ltr"] .prose {
+        text-align: left !important;
+        direction: ltr !important;
+      }
+      html[dir="ltr"] .prose p {
+        text-align: left !important;
+        direction: ltr !important;
+      }
+      html[dir="ltr"] .prose * {
+        direction: ltr !important;
+        text-align: left !important;
+      }
+      html[dir="ltr"] h1,
+      html[dir="ltr"] h2,
+      html[dir="ltr"] h3,
+      html[dir="ltr"] h4,
+      html[dir="ltr"] h5,
+      html[dir="ltr"] h6 {
+        text-align: left !important;
+        direction: ltr !important;
+      }
+      html[dir="ltr"] div {
+        direction: ltr !important;
+      }
+      html[dir="ltr"] span {
+        direction: ltr !important;
+      }
+      /* Force all text content to be LTR */
+      html[dir="ltr"] * {
+        direction: ltr !important;
+        text-align: left !important;
+      }
+      /* Specific targeting for the content area */
+      html[dir="ltr"] article {
+        direction: ltr !important;
+        text-align: left !important;
+      }
+      html[dir="ltr"] article * {
+        direction: ltr !important;
+        text-align: left !important;
+      }
+      html[dir="ltr"] main {
+        direction: ltr !important;
+        text-align: left !important;
+      }
+      html[dir="ltr"] main * {
+        direction: ltr !important;
+        text-align: left !important;
+      }
+      /* Target the specific LTR content class */
+      .ltr-content {
+        direction: ltr !important;
+        text-align: left !important;
+      }
+      .ltr-content * {
+        direction: ltr !important;
+        text-align: left !important;
+      }
+      .ltr-content p {
+        direction: ltr !important;
+        text-align: left !important;
+      }
+      .ltr-content h1,
+      .ltr-content h2,
+      .ltr-content h3,
+      .ltr-content h4,
+      .ltr-content h5,
+      .ltr-content h6 {
+        direction: ltr !important;
+        text-align: left !important;
+      }
+      /* Force all text nodes to be LTR */
+      .ltr-content p,
+      .ltr-content div,
+      .ltr-content span,
+      .ltr-content strong,
+      .ltr-content em,
+      .ltr-content code,
+      .ltr-content pre,
+      .ltr-content blockquote,
+      .ltr-content ul,
+      .ltr-content ol,
+      .ltr-content li {
+        direction: ltr !important;
+        text-align: left !important;
+        unicode-bidi: bidi-override !important;
+      }
+      /* Target inline elements specifically */
+      .ltr-content strong,
+      .ltr-content em,
+      .ltr-content code {
+        direction: ltr !important;
+        unicode-bidi: bidi-override !important;
+      }
+      /* Target the slot content directly */
+      .ltr-content slot,
+      .ltr-content ::slotted(*) {
+        direction: ltr !important;
+        text-align: left !important;
+        unicode-bidi: bidi-override !important;
+      }
+      /* Force all text content to be LTR with highest specificity */
+      html[dir="ltr"] .prose .ltr-content,
+      html[dir="ltr"] .prose .ltr-content * {
+        direction: ltr !important;
+        text-align: left !important;
+        unicode-bidi: bidi-override !important;
+      }
+      /* Aggressive LTR forcing for all content */
+      html[dir="ltr"] .prose {
+        direction: ltr !important;
+        text-align: left !important;
+        unicode-bidi: bidi-override !important;
+      }
+      html[dir="ltr"] .prose > * {
+        direction: ltr !important;
+        text-align: left !important;
+        unicode-bidi: bidi-override !important;
+      }
+      html[dir="ltr"] .prose > * > * {
+        direction: ltr !important;
+        text-align: left !important;
+        unicode-bidi: bidi-override !important;
+      }
+      /* Target all possible markdown elements */
+      html[dir="ltr"] .prose p,
+      html[dir="ltr"] .prose div,
+      html[dir="ltr"] .prose span,
+      html[dir="ltr"] .prose strong,
+      html[dir="ltr"] .prose em,
+      html[dir="ltr"] .prose code,
+      html[dir="ltr"] .prose pre,
+      html[dir="ltr"] .prose blockquote,
+      html[dir="ltr"] .prose ul,
+      html[dir="ltr"] .prose ol,
+      html[dir="ltr"] .prose li,
+      html[dir="ltr"] .prose a {
+        direction: ltr !important;
+        text-align: left !important;
+        unicode-bidi: bidi-override !important;
+      }
+      /* Force text orientation and direction at the deepest level */
+      html[dir="ltr"] .prose * {
+        direction: ltr !important;
+        text-align: left !important;
+        unicode-bidi: bidi-override !important;
+        text-orientation: mixed !important;
+      }
+      /* Target text nodes specifically */
+      html[dir="ltr"] .prose {
+        direction: ltr !important;
+        text-align: left !important;
+        unicode-bidi: bidi-override !important;
+        text-orientation: mixed !important;
+      }
+      /* Override any inherited RTL from parent elements */
+      html[dir="ltr"] .prose,
+      html[dir="ltr"] .prose *,
+      html[dir="ltr"] .prose *::before,
+      html[dir="ltr"] .prose *::after {
+        direction: ltr !important;
+        text-align: left !important;
+        unicode-bidi: bidi-override !important;
+      }
+      /* Override the global p { text-align: right; } rule specifically */
+      html[dir="ltr"] .prose p {
+        text-align: left !important;
+        direction: ltr !important;
+        unicode-bidi: bidi-override !important;
+      }
+      /* Override the global body { text-align: right !important; } rule */
+      html[dir="ltr"] .prose {
+        text-align: left !important;
+        direction: ltr !important;
+        unicode-bidi: bidi-override !important;
+      }
+      /* Maximum specificity to override global CSS */
+      html[dir="ltr"] body .prose {
+        text-align: left !important;
+        direction: ltr !important;
+        unicode-bidi: bidi-override !important;
+      }
+      html[dir="ltr"] body .prose p {
+        text-align: left !important;
+        direction: ltr !important;
+        unicode-bidi: bidi-override !important;
+      }
+      html[dir="ltr"] body .prose * {
+        text-align: left !important;
+        direction: ltr !important;
+        unicode-bidi: bidi-override !important;
+      }
+      /* Override the global p { text-align: right; } rule with maximum specificity */
+      html[dir="ltr"] body .prose p,
+      html[dir="ltr"] body .prose div,
+      html[dir="ltr"] body .prose span,
+      html[dir="ltr"] body .prose strong,
+      html[dir="ltr"] body .prose em,
+      html[dir="ltr"] body .prose code,
+      html[dir="ltr"] body .prose pre,
+      html[dir="ltr"] body .prose blockquote,
+      html[dir="ltr"] body .prose ul,
+      html[dir="ltr"] body .prose ol,
+      html[dir="ltr"] body .prose li,
+      html[dir="ltr"] body .prose a {
+        text-align: left !important;
+        direction: ltr !important;
+        unicode-bidi: bidi-override !important;
+      }
     </style>
   </head>
 
@@ -66,7 +285,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
             )
           }
         </div>
-        <div class="prose">
+        <div class="prose" class:list={[{ "ltr-content": dir === "ltr" }]}>
           <div class="title">
             <div class="date">
               <FormattedDate date={pubDate} />
@@ -81,7 +300,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
             <h1>{title}</h1>
             <hr />
           </div>
-          <slot />
+          <div class="content-wrapper" style={dir === "ltr" ? "direction: ltr !important; text-align: left !important;" : ""}>
+            <slot />
+          </div>
         </div>
       </article>
     </main>

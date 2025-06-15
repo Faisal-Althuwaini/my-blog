@@ -34,8 +34,8 @@ body {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--darkmode-white));
-	font-size: 20px;
-	line-height: 1.7;
+	font-size: 16px;
+	line-height: 1.6;
 }
 main {
 	width: 720px;
@@ -101,9 +101,14 @@ img {
 	border-radius: 8px;
 }
 code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+	padding: 3px 6px;
+	background-color: rgba(var(--accent), 0.1);
+	border: 1px solid rgba(var(--accent), 0.2);
+	border-radius: 4px;
+	font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+	font-size: 0.9em;
+	color: var(--accent);
+	font-weight: 500;
 }
 pre {
 	padding: 1.5em;
@@ -124,7 +129,7 @@ hr {
 }
 @media (max-width: 720px) {
 	body {
-		font-size: 18px;
+		font-size: 14px;
 	}
 	main {
 		padding: 1em;
@@ -147,4 +152,26 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* LTR Override Rules - These must come after all other rules */
+html[dir="ltr"] body {
+	text-align: left !important;
+	direction: ltr !important;
+}
+html[dir="ltr"] p {
+	text-align: left !important;
+	direction: ltr !important;
+}
+html[dir="ltr"] .prose {
+	text-align: left !important;
+	direction: ltr !important;
+}
+html[dir="ltr"] .prose p {
+	text-align: left !important;
+	direction: ltr !important;
+}
+html[dir="ltr"] .prose * {
+	text-align: left !important;
+	direction: ltr !important;
 }
