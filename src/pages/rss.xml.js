@@ -11,7 +11,7 @@ export async function get(context) {
 		items: posts.map((post) => ({
 			title: post.data.title,
 			description: post.data.heroImage 
-				? `<img src="${new URL(post.data.heroImage, context.site).href}" alt="${post.data.title}" style="max-width: 100%; height: auto;" /><br/>${post.data.description}`
+				? `${new URL(post.data.heroImage, context.site).href}\n${post.data.description}`
 				: post.data.description,
 			pubDate: post.data.pubDate,
 			link: `/${post.slug}/`,
