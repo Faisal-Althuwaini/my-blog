@@ -11,6 +11,12 @@ export async function get(context) {
 		items: posts.map((post) => ({
 			...post.data,
 			link: `/${post.slug}/`,
+			...(post.data.heroImage && {
+				enclosure: {
+					url: new URL(post.data.heroImage, context.site).href,
+					type: 'image/jpeg',
+				},
+			}),
 		})),
 	});
 }
