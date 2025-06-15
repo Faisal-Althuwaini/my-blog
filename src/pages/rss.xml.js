@@ -8,24 +8,13 @@ export async function get(context) {
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
 		site: context.site,
-		items: posts.map((post) => {
-			const item = {
-				title: post.data.title,
-				description: post.data.description,
-				pubDate: post.data.pubDate,
-				link: `/${post.slug}/`,
-			};
-			
-			// Add image if it exists
-			if (post.data.heroImage) {
-				item.enclosure = {
-					url: new URL(post.data.heroImage, context.site).href,
-					type: 'image/jpeg',
-					length: 0, // RSS requires length, but we don't know it
-				};
-			}
-			
-			return item;
-		}),
+		items: posts.map((post) => ({
+			title: post.data.title,
+			description: post.data.heroImage 
+				? `<img src="${new URL(post.data.heroImage, context.site).href}" alt="${post.data.title}" style="max-width: 100%; height: auto;" /><br/>${post.data.description}`
+				: post.data.description,
+			pubDate: post.data.pubDate,
+			link: `/${post.slug}/`,
+		})),
 	});
 }
