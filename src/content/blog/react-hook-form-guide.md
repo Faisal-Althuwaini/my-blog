@@ -1,7 +1,7 @@
 ---
 title: "React Hook Form: A Powerful Form Management Library"
 description: "Learn how to use React Hook Form to manage form state and validation in React applications"
-pubDate: "Jan 15 2025"
+pubDate: "May 19 2025"
 heroImage: "/react-hook-form.png"
 dir: "ltr"
 ---

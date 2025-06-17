@@ -1,7 +1,7 @@
 ---
 title: "React Query"
 description: "Learn how to use React Query to fetch, manage, and cache data in React applications"
-pubDate: "Jan 15 2025"
+pubDate: "May 20 2025"
 heroImage: "/react-query.png"
 dir: "ltr"
 ---
